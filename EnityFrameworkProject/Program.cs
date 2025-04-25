@@ -1,0 +1,204 @@
+﻿using EnityFrameworkProject.Data;
+using EnityFrameworkProject.Models;
+using System.Runtime.InteropServices;
+
+MyDBContext contex = new MyDBContext();
+Console.WriteLine("tutorial: https://www.youtube.com/watch?v=SryQxUeChMc&list=PLdo4fOcmZ0oXCPdC3fTFA3Z79-eVH3K-s");
+
+void AddProducts()
+{
+    Product simplePizza = new Product()
+    {
+        Name = "Prosta pizza",
+        Price = 9.99M
+    };
+
+    contex.Products.Add(simplePizza);
+
+    Product gulasz = new Product()
+    {
+        Name = "Gulasz węgierski",
+        Price = 25.93M
+    };
+
+    contex.Products.Add(gulasz);
+
+    Product ros = new Product()
+    {
+        Name = "Rosół wielkopolski",
+        Price = 12.30M
+    };
+
+    contex.Products.Add(ros);
+
+    contex.SaveChanges();
+}
+
+void ShowProducts()
+{
+    var products = from product in contex.Products
+                   where product.Price > 7.00M
+                   orderby product.Name
+                   select product;
+
+    foreach (Product product in products)
+    {
+        Console.WriteLine(product.Name);
+        Console.WriteLine(product.Price);
+        Console.WriteLine("--------------");
+    }
+}
+
+void ShowCustomers()
+{
+    var customers = from customer in contex.Customers
+                   orderby customer.LastName
+                   select customer;
+
+    foreach (Customer c in customers)
+    {
+        Console.WriteLine(c.FirstName);
+        Console.WriteLine(c.LastName);
+        Console.WriteLine(c.Email);
+        Console.WriteLine("--------------");
+    }
+}
+
+void AddProductsFromFile()
+{
+    var stream = new FileStream("..\\..\\..\\Dane\\products.dat", FileMode.Open);
+    StreamReader reader = new StreamReader(stream, System.Text.Encoding.UTF8);
+    string line;
+    while ((line = reader.ReadLine()) != null)
+    {
+        string[] sep = line.Split(';');
+        Product p = new Product();
+        p.Name = sep[0];
+        p.Price = Convert.ToDecimal(sep[1]);
+        contex.Products.Add(p);
+    }
+    reader.Close();
+    stream.Close();
+    contex.SaveChanges();
+}
+
+void AddCustomersFromFile()
+{
+    var stream = new FileStream("..\\..\\..\\Dane\\customers.dat", FileMode.Open);
+    StreamReader reader = new StreamReader(stream, System.Text.Encoding.UTF8);
+    string line;
+    while ((line = reader.ReadLine()) != null)
+    {
+        string[] sep = line.Split(';');
+        Customer c = new Customer();
+        c.FirstName = sep[0];
+        c.LastName = sep[1];
+        c.Email = sep[2];
+        c.Phone = sep[3];
+         contex.Customers.Add(c);
+    }
+    reader.Close();
+    stream.Close();
+    contex.SaveChanges();
+}
+
+void ZipDataBase()
+{
+  foreach (Product product in contex.Products)
+    {
+        contex.Products.Remove(product);
+    }
+    contex.SaveChanges(true);
+
+  foreach (Customer c in contex.Customers)
+  {
+        contex.Customers.Remove(c);
+  }
+    foreach (Order o in contex.Orders)
+        contex.Orders.Remove(o);
+
+    contex.SaveChanges(true);
+
+}
+
+Product getProduct(string productName)
+{
+    foreach(Product product in contex.Products)
+    {
+        if (product.Name == productName)
+            return product;
+    }
+    return null;
+}
+
+int getCustomerId(string customerName)
+{
+    foreach (Customer customer in contex.Customers)
+    {
+        if (customer.LastName == customerName)
+            return customer.Id;
+    }
+    return 0;
+}
+
+void AddOrder(string productName, string customerName, int quantity, DateTime orderTime)
+{
+    Product product = getProduct(productName);
+    int customerId = getCustomerId(customerName);
+    Order order = new Order();
+    order.CustomerId = customerId;
+    order.OrderPlaced = orderTime;
+    order.OrderDetails = new List<OrderDetail>();
+    OrderDetail detail = new OrderDetail();
+    detail.ProductId = product.Id;
+    detail.Order = order;
+    detail.Quantity = quantity;
+    detail.Product = product;
+    detail.ProductId = product.Id;
+    order.OrderDetails.Add(detail);
+    contex.Orders.Add(order);
+    contex.SaveChanges();
+}
+
+string getCustomerName(int customerId)
+{
+    foreach (Customer c in contex.Customers)
+    {
+        if (c.Id == customerId)
+            return c.FirstName + " " + c.LastName;
+    }
+    return "";
+}
+
+void ShowOrders()
+{
+    foreach (Order order in contex.Orders)
+    {
+        Console.WriteLine("Numer zamówienia: " + order.Id);
+        Console.WriteLine("Data: " + order.OrderPlaced.ToString());
+        Console.WriteLine("Klient: " + getCustomerName(order.CustomerId));
+        foreach (OrderDetail detail in order.OrderDetails)
+        {
+            Console.WriteLine("Produkt: " + detail.Product.Name);
+            if (detail.OrderId == order.Id)
+            {
+                Console.WriteLine("Ilość: " + detail.Quantity);
+            }
+            Console.WriteLine("Kwota: " + (detail.Product.Price * detail.Quantity).ToString());
+        }
+        Console.WriteLine("--------------");
+    }
+}
+
+ZipDataBase();
+AddProducts();
+AddProductsFromFile();
+AddCustomersFromFile();
+ShowProducts();
+ShowCustomers();
+AddOrder("Grochówka", "Ceglarek", 1, DateTime.Now);
+AddOrder("Golonka po bawarsku", "Polańska", 2, DateTime.Now);
+AddOrder("Sandacz po zamordejsku", "Czapiewska", 1, DateTime.Now);
+ShowOrders();
+
+

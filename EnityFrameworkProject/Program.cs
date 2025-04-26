@@ -1,5 +1,6 @@
 ﻿using EnityFrameworkProject.Data;
 using EnityFrameworkProject.Models;
+using Microsoft.EntityFrameworkCore;
 using System.Diagnostics.CodeAnalysis;
 using System.Reflection.Metadata.Ecma335;
 using System.Runtime.InteropServices;
@@ -192,6 +193,14 @@ string getCustomerName(int customerId)
     return "";
 }
 
+Product getProductById(int productId)
+{
+    foreach (Product p in contex.Products)
+        if (p.Id == productId)
+            return p;
+    return null;
+}
+
 void ShowOrders()
 {
     foreach (Order order in contex.Orders)
@@ -202,7 +211,7 @@ void ShowOrders()
         decimal suma = 0;
         foreach (OrderDetail detail in order.OrderDetails)
         {
-            Console.WriteLine("Produkt: " + detail.Product.Name);
+            Console.WriteLine("Produkt: " + getProductById(detail.ProductId).Name);
             if (detail.OrderId == order.Id)
             {
                 Console.WriteLine("Ilość: " + detail.Quantity);
@@ -216,6 +225,20 @@ void ShowOrders()
     }
 }
 
+void IncludeOrderDetails()
+{
+    var cont = contex;
+    var orders = cont.Orders
+       .Include(o => o.OrderDetails)
+       .ToList();
+    foreach (var order in orders)
+    {
+        Console.WriteLine("Details: " + order.OrderDetails.Count);
+    }
+}
+
+IncludeOrderDetails();
+/*
 ZipDataBase();
 AddProducts();
 AddProductsFromFile();
@@ -226,8 +249,11 @@ int orderId = AddOrder("Grochówka", "Ceglarek", 1, DateTime.Now);
 AddProductToOrder("Sandacz po zamordejsku", 1, orderId);
 AddProductToOrder("Zupa pomidorowa", 1, orderId);
 AddProductToOrder("Miętus po argentyńsku", 2, orderId);
-AddOrder("Golonka po bawarsku", "Polańska", 2, DateTime.Now);
-AddOrder("Sandacz po zamordejsku", "Czapiewska", 1, DateTime.Now);
+orderId = AddOrder("Golonka po bawarsku", "Polańska", 2, DateTime.Now);
+AddProductToOrder("Kaszanka z ziemniakami", 2, orderId);
+orderId = AddOrder("Kapuśniak", "Czapiewska", 1, DateTime.Now);
+AddProductToOrder("Sandacz po zamordejsku", 1, orderId);
+*/
 ShowOrders();
 
 

@@ -1,5 +1,7 @@
 ﻿using EnityFrameworkProject.Data;
 using EnityFrameworkProject.Models;
+using System.Diagnostics.CodeAnalysis;
+using System.Reflection.Metadata.Ecma335;
 using System.Runtime.InteropServices;
 
 MyDBContext contex = new MyDBContext();
@@ -141,7 +143,7 @@ int getCustomerId(string customerName)
     return 0;
 }
 
-void AddOrder(string productName, string customerName, int quantity, DateTime orderTime)
+int AddOrder(string productName, string customerName, int quantity, DateTime orderTime)
 {
     Product product = getProduct(productName);
     int customerId = getCustomerId(customerName);
@@ -158,6 +160,26 @@ void AddOrder(string productName, string customerName, int quantity, DateTime or
     order.OrderDetails.Add(detail);
     contex.Orders.Add(order);
     contex.SaveChanges();
+    return order.Id;
+}
+
+void AddProductToOrder(string productName, int quantity, int orderId)
+{
+    OrderDetail detail = new OrderDetail();
+    detail.Product = getProduct(productName);
+    detail.ProductId = detail.Product.Id;
+    Order order = getOrder(orderId);
+    detail.Quantity = quantity;
+    detail.Order = order;
+    order.OrderDetails.Add(detail);
+}
+
+Order getOrder(int orderId)
+{
+    foreach(Order order in contex.Orders)
+        if (order.Id == orderId)
+            return order;
+    return null;
 }
 
 string getCustomerName(int customerId)
@@ -177,6 +199,7 @@ void ShowOrders()
         Console.WriteLine("Numer zamówienia: " + order.Id);
         Console.WriteLine("Data: " + order.OrderPlaced.ToString());
         Console.WriteLine("Klient: " + getCustomerName(order.CustomerId));
+        decimal suma = 0;
         foreach (OrderDetail detail in order.OrderDetails)
         {
             Console.WriteLine("Produkt: " + detail.Product.Name);
@@ -184,8 +207,11 @@ void ShowOrders()
             {
                 Console.WriteLine("Ilość: " + detail.Quantity);
             }
-            Console.WriteLine("Kwota: " + (detail.Product.Price * detail.Quantity).ToString());
+            decimal kwota = detail.Product.Price * detail.Quantity;
+            suma += kwota;
+            Console.WriteLine("Kwota: " + (kwota).ToString("C2"));
         }
+        Console.WriteLine("Razem do zapłaty : " +  suma.ToString("C2"));
         Console.WriteLine("--------------");
     }
 }
@@ -196,7 +222,10 @@ AddProductsFromFile();
 AddCustomersFromFile();
 ShowProducts();
 ShowCustomers();
-AddOrder("Grochówka", "Ceglarek", 1, DateTime.Now);
+int orderId = AddOrder("Grochówka", "Ceglarek", 1, DateTime.Now);
+AddProductToOrder("Sandacz po zamordejsku", 1, orderId);
+AddProductToOrder("Zupa pomidorowa", 1, orderId);
+AddProductToOrder("Miętus po argentyńsku", 2, orderId);
 AddOrder("Golonka po bawarsku", "Polańska", 2, DateTime.Now);
 AddOrder("Sandacz po zamordejsku", "Czapiewska", 1, DateTime.Now);
 ShowOrders();

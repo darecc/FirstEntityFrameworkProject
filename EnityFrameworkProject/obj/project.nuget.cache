@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "zKIQDbIegMN0PDD/YoUgOa+zgXusEPVQPi5qOAwlzgebqpI2Ufm1O3Y2PPC+I7RHEvTTy0HcMTTjKCCfQ8vPig==",
+  "dgSpecHash": "NPrH7VPx8G57j3z3KjbW9bgagCrJarkvGeg0P+kN75xNrndJgmiJKoDot9SeXSZ42dvDYqqXUu/xrRfzSZ+Mqw==",
   "success": true,
   "projectFilePath": "D:\\MyProjects\\C#\\EnityFrameworkProject\\EnityFrameworkProject\\EnityFrameworkProject.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\dariu\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\dariu\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
+    "C:\\Users\\dariu\\.nuget\\packages\\docfx.console\\2.59.4\\docfx.console.2.59.4.nupkg.sha512",
     "C:\\Users\\dariu\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\dariu\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\dariu\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

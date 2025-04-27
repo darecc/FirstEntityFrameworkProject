@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shfbBuild product="Sandcastle Help File Builder and Tools" version="2025.3.22.0" projectFile="D:\MyProjects\C#\EnityFrameworkProject\EnityFrameworkProject\Dokumentacja\dokument.html" started="27.04.2025 02:21:47">
+<buildStep step="Initializing">
+The Sandcastle tools are located in &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder&#39;
+Locating components in the following folder(s):
+    D:\MyProjects\C#\EnityFrameworkProject\EnityFrameworkProject\Dokumentacja
+    C:\ProgramData\EWSoftware\Sandcastle Help File Builder\Components and Plug-Ins
+    C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components
+Using framework reflection data for &#39;.NET Framework 4.8&#39; located in &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework&#39;
+Using presentation style &#39;Default2022&#39; located in &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\Default2022&#39;
+Loading and initializing plug-ins...
+Website Table of Contents Generator Version 2025.3.22.0
+Copyright &#169; 2006-2025, Eric Woodruff, All Rights Reserved
+-------------------------------
+Clearing any prior web/markdown output...
+</buildStep>
+<buildStep step="ValidatingDocumentationSources">
+Validating and copying documentation source information
+Source: D:\MyProjects\C#\EnityFrameworkProject\EnityFrameworkProject\bin\Debug\net7.0\EnityFrameworkProject.dll
+    Found assembly &#39;D:\MyProjects\C#\EnityFrameworkProject\EnityFrameworkProject\bin\Debug\net7.0\EnityFrameworkProject.dll&#39;
+Source: D:\MyProjects\C#\EnityFrameworkProject\EnityFrameworkProject\bin\Debug\net7.0\EnityFrameworkProject.xml
+
+Copying XML comments files
+    D:\MyProjects\C#\EnityFrameworkProject\EnityFrameworkProject\bin\Debug\net7.0\EnityFrameworkProject.xml -&gt; D:\MyProjects\C#\EnityFrameworkProject\EnityFrameworkProject\Dokumentacja\Help\Working\EnityFrameworkProject.xml
+</buildStep>
+<buildStep step="GenerateSharedContent">
+Generating shared content files (en-US, Angielski (Stany Zjednoczone))...
+    Last step completed in 00:00:00,0085
+</buildStep>
+<buildStep step="GenerateApiFilter">
+Generating API filter for MRefBuilder...
+    Last step completed in 00:00:00,0029
+</buildStep>
+<buildStep step="GenerateReflectionInfo">
+Generating reflection information...
+[C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\MSBuild\Current\Bin\MSBuild.exe - GenerateRefInfo-28d9d4f9-58f2-4855-b915-7db2c432b232.proj]
+Kompilacja rozpocz&#169;a si&#169; 27.04.2025 02:21:47.
+Projekt &quot;D:\MyProjects\C#\EnityFrameworkProject\EnityFrameworkProject\Dokumentacja\Help\Working\GenerateRefInfo-28d9d4f9-58f2-4855-b915-7db2c432b232.proj&quot; w w&#169;&#171;le 1 (domylne elementy docelowe).
+PrepareForBuild:
+  Tworzenie katalogu &quot;obj\Debug\&quot;.
+GenerateBindingRedirects:
+  Brak sugerowanych przekierowa&#228; powiĄza&#228; z ResolveAssemblyReferences.
+GenerateRefInfo:
+  Microsoft.Build (v16.11.2+f3225964253d565862806752e54a7608191a9035)
+  c Microsoft Corporation. All rights reserved.
+  No source code context base path specified.  Source context information is unavailable.
+  Loaded 1 assemblies for reflection and 1 dependency assemblies.
+MRefBuilder : warning : Ignoring unresolved assembly reference: System.ComponentModel (System.ComponentModel, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a) required by Microsoft.EntityFrameworkCore [D:\MyProjects\C#\EnityFrameworkProject\EnityFrameworkProject\Dokumentacja\Help\Working\GenerateRefInfo-28d9d4f9-58f2-4855-b915-7db2c432b232.proj]
+MRefBuilder : warning : Ignoring unresolved assembly reference: System.ComponentModel.Annotations (System.ComponentModel.Annotations, Version=7.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a) required by EnityFrameworkProject [D:\MyProjects\C#\EnityFrameworkProject\EnityFrameworkProject\Dokumentacja\Help\Working\GenerateRefInfo-28d9d4f9-58f2-4855-b915-7db2c432b232.proj]
+MRefBuilder : warning : Ignoring unresolved assembly reference: System.Linq.Expressions (System.Linq.Expressions, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a) required by Microsoft.EntityFrameworkCore [D:\MyProjects\C#\EnityFrameworkProject\EnityFrameworkProject\Dokumentacja\Help\Working\GenerateRefInfo-28d9d4f9-58f2-4855-b915-7db2c432b232.proj]
+MRefBuilder : warning : Ignoring unresolved assembly reference: System.ComponentModel.TypeConverter (System.ComponentModel.TypeConverter, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a) required by Microsoft.EntityFrameworkCore [D:\MyProjects\C#\EnityFrameworkProject\EnityFrameworkProject\Dokumentacja\Help\Working\GenerateRefInfo-28d9d4f9-58f2-4855-b915-7db2c432b232.proj]
+MRefBuilder : warning : Ignoring unresolved assembly reference: System.Collections (System.Collections, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a) required by Microsoft.EntityFrameworkCore [D:\MyProjects\C#\EnityFrameworkProject\EnityFrameworkProject\Dokumentacja\Help\Working\GenerateRefInfo-28d9d4f9-58f2-4855-b915-7db2c432b232.proj]
+MRefBuilder : warning : Unexpected parameter type Void.  This may be an issue (missing reference assembly?).  Declaring method: Microsoft.EntityFrameworkCore.DbContext.AddAsync(System.Void,Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntry`1&lt;type parameter.TEntity&gt;) [D:\MyProjects\C#\EnityFrameworkProject\EnityFrameworkProject\Dokumentacja\Help\Working\GenerateRefInfo-28d9d4f9-58f2-4855-b915-7db2c432b232.proj]
+MRefBuilder : warning : Unexpected parameter type Void.  This may be an issue (missing reference assembly?).  Declaring method: Microsoft.EntityFrameworkCore.DbContext.AddAsync(System.Void,Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntry) [D:\MyProjects\C#\EnityFrameworkProject\EnityFrameworkProject\Dokumentacja\Help\Working\GenerateRefInfo-28d9d4f9-58f2-4855-b915-7db2c432b232.proj]
+MRefBuilder : warning : Unexpected parameter type Void.  This may be an issue (missing reference assembly?).  Declaring method: Microsoft.EntityFrameworkCore.DbContext.FindAsync(System.Void,System.Object) [D:\MyProjects\C#\EnityFrameworkProject\EnityFrameworkProject\Dokumentacja\Help\Working\GenerateRefInfo-28d9d4f9-58f2-4855-b915-7db2c432b232.proj]
+MRefBuilder : warning : Unexpected parameter type Void.  This may be an issue (missing reference assembly?).  Declaring method: Microsoft.EntityFrameworkCore.DbContext.FindAsync(System.Void,System.Object,System.Type) [D:\MyProjects\C#\EnityFrameworkProject\EnityFrameworkProject\Dokumentacja\Help\Working\GenerateRefInfo-28d9d4f9-58f2-4855-b915-7db2c432b232.proj]
+MRefBuilder : warning : Unexpected parameter type Void.  This may be an issue (missing reference assembly?).  Declaring method: Microsoft.EntityFrameworkCore.DbContext.FindAsync(System.Void) [D:\MyProjects\C#\EnityFrameworkProject\EnityFrameworkProject\Dokumentacja\Help\Working\GenerateRefInfo-28d9d4f9-58f2-4855-b915-7db2c432b232.proj]
+MRefBuilder : warning : Unexpected parameter type Void.  This may be an issue (missing reference assembly?).  Declaring method: Microsoft.EntityFrameworkCore.DbContext.FindAsync(System.Void,type parameter.TEntity) [D:\MyProjects\C#\EnityFrameworkProject\EnityFrameworkProject\Dokumentacja\Help\Working\GenerateRefInfo-28d9d4f9-58f2-4855-b915-7db2c432b232.proj]
+MRefBuilder : warning : Unexpected parameter type Void.  This may be an issue (missing reference assembly?).  Declaring method: Microsoft.EntityFrameworkCore.DbContext.FromExpression(System.Void) [D:\MyProjects\C#\EnityFrameworkProject\EnityFrameworkProject\Dokumentacja\Help\Working\GenerateRefInfo-28d9d4f9-58f2-4855-b915-7db2c432b232.proj]
+  Wrote information on 3 namespaces, 6 types, and 35 members
+  Merging duplicate type and member information
+  Merged 0 duplicate type(s) and 0 duplicate member(s)
+Kompilowanie projektu &quot;D:\MyProjects\C#\EnityFrameworkProject\EnityFrameworkProject\Dokumentacja\Help\Working\GenerateRefInfo-28d9d4f9-58f2-4855-b915-7db2c432b232.proj&quot; wykonane (domylne elementy docelowe).
+    Last step completed in 00:00:01,1979
+</buildStep>
+<buildStep step="ApplyDocumentModel">
+Applying document model to reflection output...
+    Last step completed in 00:00:00,0175
+</buildStep>
+<buildStep step="AddApiTopicFilenames">
+Adding topic filenames to API members...
+    Last step completed in 00:00:00,0157
+</buildStep>
+<buildStep step="GenerateApiTopicManifest">
+Generating API topic manifest...
+    Last step completed in 00:00:00,0026
+</buildStep>
+<buildStep step="GenerateNamespaceSummaries">
+Generating namespace summary information...
+    Last step completed in 00:00:00,0046
+</buildStep>
+<buildStep step="GenerateInheritedDocumentation">
+Generating inherited documentation...
+Reflection information will be retrieved from &#39;D:\MyProjects\C#\EnityFrameworkProject\EnityFrameworkProject\Dokumentacja\Help\Working\reflection.xml&#39;
+Indexing D:\MyProjects\C#\EnityFrameworkProject\EnityFrameworkProject\Dokumentacja\Help\Working\EnityFrameworkProject.xml
+Indexed 33 members in 1 file(s).  1 file(s) to scan for &lt;inheritdoc /&gt; tags.
+Merging inherited documentation...
+
+SHFB: Warning GID0004: No comments found for member &#39;T:EnityFrameworkProject.Migrations.InitialCreate&#39;
+SHFB: Warning GID0004: No comments found for member &#39;M:EnityFrameworkProject.Migrations.InitialCreate.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)&#39;
+SHFB: Warning GID0004: No comments found for member &#39;M:EnityFrameworkProject.Migrations.InitialCreate.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)&#39;
+SHFB: Warning GID0004: No comments found for member &#39;M:EnityFrameworkProject.Migrations.InitialCreate.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)&#39;
+Documentation merged successfully.  Merged comments were saved in &#39;D:\MyProjects\C#\EnityFrameworkProject\EnityFrameworkProject\Dokumentacja\Help\Working\_InheritedDocs_.xml&#39;.
+    Last step completed in 00:00:00,0380
+</buildStep>
+<buildStep step="CopyAdditionalContent">
+Copying additional content files...
+No additional content to copy
+    Last step completed in 00:00:00,0000
+</buildStep>
+<buildStep step="MergeTablesOfContents">
+Merging conceptual and additional tables of contents...
+    Last step completed in 00:00:00,0024
+</buildStep>
+<buildStep step="GenerateIntermediateTableOfContents">
+Generating intermediate table of contents file for API content...
+Generating conceptual content intermediate TOC file...
+    Last step completed in 00:00:00,0000
+</buildStep>
+<buildStep step="CreateBuildAssemblerConfigs">
+Creating Sandcastle configuration files...
+    Last step completed in 00:00:00,0472
+</buildStep>
+<buildStep step="CombiningIntermediateTocFiles">
+Combining conceptual and API intermediate TOC files...
+    Last step completed in 00:00:00,0111
+</buildStep>
+<buildStep step="MergeCustomConfigs">
+Merging custom build component configurations
+D:\MyProjects\C#\EnityFrameworkProject\EnityFrameworkProject\Dokumentacja\Help\Working\BuildAssembler.config
+  Updating reference topic configurations.
+  No conceptual content.  Removing conceptual content components.
+    Last step completed in 00:00:00,0106
+</buildStep>
+<buildStep step="BuildTopics">
+Building help topics...
+<plugIn name="Website Table of Contents Generator" behavior="Before" priority="1000">
+Loading TOC info and adding unique IDs to parent nodes
+</plugIn>Loading configuration...
+Processing topics...
+SHFB: Warning BE0066: ShowMissingComponent: [N:EnityFrameworkProject.Data] Missing &lt;summary&gt; documentation
+SHFB: Warning BE0066: ShowMissingComponent: [M:EnityFrameworkProject.Data.MyDBContext.OnConfiguring(Microsoft.EntityFrameworkCore.DbContextOptionsBuilder)] Missing &lt;param name=&quot;optionsBuilder&quot;/&gt; documentation
+SHFB: Warning BE0066: ShowMissingComponent: [N:EnityFrameworkProject.Migrations] Missing &lt;summary&gt; documentation
+SHFB: Warning BE0066: ShowMissingComponent: [T:EnityFrameworkProject.Migrations.InitialCreate] Missing &lt;summary&gt; documentation
+SHFB: Warning BE0066: ShowMissingComponent: [M:EnityFrameworkProject.Migrations.InitialCreate.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)] Missing &lt;summary&gt; documentation
+SHFB: Warning BE0066: ShowMissingComponent: [M:EnityFrameworkProject.Migrations.InitialCreate.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)] Missing &lt;param name=&quot;modelBuilder&quot;/&gt; documentation
+SHFB: Warning BE0066: ShowMissingComponent: [M:EnityFrameworkProject.Migrations.InitialCreate.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)] Missing &lt;summary&gt; documentation
+SHFB: Warning BE0066: ShowMissingComponent: [M:EnityFrameworkProject.Migrations.InitialCreate.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)] Missing &lt;param name=&quot;migrationBuilder&quot;/&gt; documentation
+SHFB: Warning BE0066: ShowMissingComponent: [M:EnityFrameworkProject.Migrations.InitialCreate.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)] Missing &lt;summary&gt; documentation
+SHFB: Warning BE0066: ShowMissingComponent: [M:EnityFrameworkProject.Migrations.InitialCreate.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)] Missing &lt;param name=&quot;migrationBuilder&quot;/&gt; documentation
+SHFB: Warning BE0066: ShowMissingComponent: [N:EnityFrameworkProject.Models] Missing &lt;summary&gt; documentation
+SHFB: Warning BE0066: ShowMissingComponent: [P:EnityFrameworkProject.Models.OrderDetail.Order] Missing &lt;summary&gt; documentation
+SHFB: Warning BE0066: ShowMissingComponent: [T:EnityFrameworkProject.Models.Product] Missing &lt;summary&gt; documentation
+SHFB: Warning BE0066: ShowMissingComponent: [P:EnityFrameworkProject.Models.Product.Id] Missing &lt;summary&gt; documentation
+SHFB: Warning BE0066: ShowMissingComponent: [P:EnityFrameworkProject.Models.Product.Name] Missing &lt;summary&gt; documentation
+SHFB: Warning BE0066: ShowMissingComponent: [P:EnityFrameworkProject.Models.Product.Price] Missing &lt;summary&gt; documentation
+Processed 57 topic(s)
+16 warning(s)
+CopyFromIndexComponent: &quot;reflection&quot; in-memory cache entries used: 3 of 15.
+CopyFromIndexComponent: &quot;comments&quot; in-memory cache entries used: 2 of 30.
+<plugIn name="Website Table of Contents Generator" behavior="After" priority="1000">
+Generating TOC fragment files
+</plugIn>    Last step completed in 00:00:00,9275
+</buildStep>
+<buildStep step="CopyStandardHelpContent">
+Copying standard help content...
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\Default2022\css\bulma.css -&gt; D:\MyProjects\C#\EnityFrameworkProject\EnityFrameworkProject\Dokumentacja\Help\Working\Output\Website\css\bulma.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\Default2022\css\bulma.css.map -&gt; D:\MyProjects\C#\EnityFrameworkProject\EnityFrameworkProject\Dokumentacja\Help\Working\Output\Website\css\bulma.css.map
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\Default2022\css\bulma.min.css -&gt; D:\MyProjects\C#\EnityFrameworkProject\EnityFrameworkProject\Dokumentacja\Help\Working\Output\Website\css\bulma.min.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\Default2022\css\font-awesome.css -&gt; D:\MyProjects\C#\EnityFrameworkProject\EnityFrameworkProject\Dokumentacja\Help\Working\Output\Website\css\font-awesome.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\Default2022\css\font-awesome.min.css -&gt; D:\MyProjects\C#\EnityFrameworkProject\EnityFrameworkProject\Dokumentacja\Help\Working\Output\Website\css\font-awesome.min.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\Default2022\css\ja-JP.css -&gt; D:\MyProjects\C#\EnityFrameworkProject\EnityFrameworkProject\Dokumentacja\Help\Working\Output\Website\css\ja-JP.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\Default2022\css\ko-KR.css -&gt; D:\MyProjects\C#\EnityFrameworkProject\EnityFrameworkProject\Dokumentacja\Help\Working\Output\Website\css\ko-KR.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\Default2022\css\presentationStyle.css -&gt; D:\MyProjects\C#\EnityFrameworkProject\EnityFrameworkProject\Dokumentacja\Help\Working\Output\Website\css\presentationStyle.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\Default2022\css\vs.min.css -&gt; D:\MyProjects\C#\EnityFrameworkProject\EnityFrameworkProject\Dokumentacja\Help\Working\Output\Website\css\vs.min.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\Default2022\css\zh-CN.css -&gt; D:\MyProjects\C#\EnityFrameworkProject\EnityFrameworkProject\Dokumentacja\Help\Working\Output\Website\css\zh-CN.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\Default2022\css\zh-TW.css -&gt; D:\MyProjects\C#\EnityFrameworkProject\EnityFrameworkProject\Dokumentacja\Help\Working\Output\Website\css\zh-TW.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\Default2022\icons\favicon.ico -&gt; D:\MyProjects\C#\EnityFrameworkProject\EnityFrameworkProject\Dokumentacja\Help\Working\Output\Website\icons\favicon.ico
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\Default2022\scripts\clipboard.min.js -&gt; D:\MyProjects\C#\EnityFrameworkProject\EnityFrameworkProject\Dokumentacja\Help\Working\Output\Website\scripts\clipboard.min.js
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\Default2022\scripts\highlight.min.js -&gt; D:\MyProjects\C#\EnityFrameworkProject\EnityFrameworkProject\Dokumentacja\Help\Working\Output\Website\scripts\highlight.min.js
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\Default2022\scripts\jquery-3.5.1.min.js -&gt; D:\MyProjects\C#\EnityFrameworkProject\EnityFrameworkProject\Dokumentacja\Help\Working\Output\Website\scripts\jquery-3.5.1.min.js
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\Default2022\scripts\presentationStyle.js -&gt; D:\MyProjects\C#\EnityFrameworkProject\EnityFrameworkProject\Dokumentacja\Help\Working\Output\Website\scripts\presentationStyle.js
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\Default2022\webfonts\fa-brands-400.ttf -&gt; D:\MyProjects\C#\EnityFrameworkProject\EnityFrameworkProject\Dokumentacja\Help\Working\Output\Website\webfonts\fa-brands-400.ttf
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\Default2022\webfonts\fa-brands-400.woff2 -&gt; D:\MyProjects\C#\EnityFrameworkProject\EnityFrameworkProject\Dokumentacja\Help\Working\Output\Website\webfonts\fa-brands-400.woff2
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\Default2022\webfonts\fa-regular-400.ttf -&gt; D:\MyProjects\C#\EnityFrameworkProject\EnityFrameworkProject\Dokumentacja\Help\Working\Output\Website\webfonts\fa-regular-400.ttf
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\Default2022\webfonts\fa-regular-400.woff2 -&gt; D:\MyProjects\C#\EnityFrameworkProject\EnityFrameworkProject\Dokumentacja\Help\Working\Output\Website\webfonts\fa-regular-400.woff2
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\Default2022\webfonts\fa-solid-900.ttf -&gt; D:\MyProjects\C#\EnityFrameworkProject\EnityFrameworkProject\Dokumentacja\Help\Working\Output\Website\webfonts\fa-solid-900.ttf
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\Default2022\webfonts\fa-solid-900.woff2 -&gt; D:\MyProjects\C#\EnityFrameworkProject\EnityFrameworkProject\Dokumentacja\Help\Working\Output\Website\webfonts\fa-solid-900.woff2
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\Default2022\webfonts\fa-v4compatibility.ttf -&gt; D:\MyProjects\C#\EnityFrameworkProject\EnityFrameworkProject\Dokumentacja\Help\Working\Output\Website\webfonts\fa-v4compatibility.ttf
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\Default2022\webfonts\fa-v4compatibility.woff2 -&gt; D:\MyProjects\C#\EnityFrameworkProject\EnityFrameworkProject\Dokumentacja\Help\Working\Output\Website\webfonts\fa-v4compatibility.woff2
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\Default2022\RootWebsiteContent\GeneralError.html -&gt; D:\MyProjects\C#\EnityFrameworkProject\EnityFrameworkProject\Dokumentacja\Help\Working\Output\Website\GeneralError.html
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\Default2022\RootWebsiteContent\index.html -&gt; D:\MyProjects\C#\EnityFrameworkProject\EnityFrameworkProject\Dokumentacja\Help\Working\Output\Website\index.html
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\Default2022\RootWebsiteContent\PageNotFound.html -&gt; D:\MyProjects\C#\EnityFrameworkProject\EnityFrameworkProject\Dokumentacja\Help\Working\Output\Website\PageNotFound.html
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\Default2022\RootWebsiteContent\search.html -&gt; D:\MyProjects\C#\EnityFrameworkProject\EnityFrameworkProject\Dokumentacja\Help\Working\Output\Website\search.html
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\Default2022\RootWebsiteContent\SearchHelp.aspx -&gt; D:\MyProjects\C#\EnityFrameworkProject\EnityFrameworkProject\Dokumentacja\Help\Working\Output\Website\SearchHelp.aspx
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\Default2022\RootWebsiteContent\SearchHelp.inc.php -&gt; D:\MyProjects\C#\EnityFrameworkProject\EnityFrameworkProject\Dokumentacja\Help\Working\Output\Website\SearchHelp.inc.php
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\Default2022\RootWebsiteContent\SearchHelp.php -&gt; D:\MyProjects\C#\EnityFrameworkProject\EnityFrameworkProject\Dokumentacja\Help\Working\Output\Website\SearchHelp.php
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\Default2022\RootWebsiteContent\Web.Config -&gt; D:\MyProjects\C#\EnityFrameworkProject\EnityFrameworkProject\Dokumentacja\Help\Working\Output\Website\Web.Config
+    Last step completed in 00:00:00,0157
+</buildStep>
+<buildStep step="GenerateFullTextIndex">
+Generating full-text index for the website...
+
+    Last step completed in 00:00:00,1312
+</buildStep>
+<buildStep step="CopyingWebsiteFiles">
+Copying website files to output folder...
+
+Copied 129 files for the website content
+    Last step completed in 00:00:00,0645
+</buildStep>
+<buildStep step="CleanIntermediates">
+Removing intermediate files...
+    Last step completed in 00:00:00,0101
+</buildStep>
+<buildStep step="Completed">
+
+Build completed successfully at 27.04.2025 02:21:49.  Total time: 00:00:02,8249
+
+</buildStep>
+</shfbBuild>

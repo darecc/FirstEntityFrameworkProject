@@ -66,3 +66,4 @@ D:\MyProjects\C#\EnityFrameworkProject\EnityFrameworkProject\obj\Debug\net7.0\re
 D:\MyProjects\C#\EnityFrameworkProject\EnityFrameworkProject\obj\Debug\net7.0\EnityFrameworkProject.pdb
 D:\MyProjects\C#\EnityFrameworkProject\EnityFrameworkProject\obj\Debug\net7.0\EnityFrameworkProject.genruntimeconfig.cache
 D:\MyProjects\C#\EnityFrameworkProject\EnityFrameworkProject\obj\Debug\net7.0\ref\EnityFrameworkProject.dll
+D:\MyProjects\C#\EnityFrameworkProject\EnityFrameworkProject\bin\Debug\net7.0\EnityFrameworkProject.xml

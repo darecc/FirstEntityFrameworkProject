@@ -19,5 +19,6 @@
   </ImportGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <PkgMicrosoft_EntityFrameworkCore_Tools Condition=" '$(PkgMicrosoft_EntityFrameworkCore_Tools)' == '' ">C:\Users\dariu\.nuget\packages\microsoft.entityframeworkcore.tools\7.0.18</PkgMicrosoft_EntityFrameworkCore_Tools>
+    <Pkgdocfx_console Condition=" '$(Pkgdocfx_console)' == '' ">C:\Users\dariu\.nuget\packages\docfx.console\2.59.4</Pkgdocfx_console>
   </PropertyGroup>
 </Project>

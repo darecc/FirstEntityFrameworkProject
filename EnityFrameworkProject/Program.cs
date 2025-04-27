@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 MyDBContext contex = new MyDBContext();
 Console.WriteLine("tutorial: https://www.youtube.com/watch?v=SryQxUeChMc&list=PLdo4fOcmZ0oXCPdC3fTFA3Z79-eVH3K-s");
 
+/// <summary>Metoda dodaje "ręcznie" okreśone produkty</summary>
 void AddProducts()
 {
     Product simplePizza = new Product()
@@ -104,7 +105,7 @@ void AddCustomersFromFile()
     stream.Close();
     contex.SaveChanges();
 }
-
+/// <summary>Opróżnienie tabel bazy danych</summary>
 void ZipDataBase()
 {
   foreach (Product product in contex.Products)
@@ -183,6 +184,9 @@ Order getOrder(int orderId)
     return null;
 }
 
+/// <summary>Metoda zwraca imię i nazwisko klienta na podstawie jego Id</summary>
+/// <param>customerId jest identyfikatorem klienta</param>
+/// <returns>zwraca imię i nazwisko klienta</returns>
 string getCustomerName(int customerId)
 {
     foreach (Customer c in contex.Customers)
@@ -193,6 +197,12 @@ string getCustomerName(int customerId)
     return "";
 }
 
+
+/// <summary>
+/// Metoda zwraca Product na podstawie jego Id
+/// </summary>
+/// <param>productId jest identyfikatorem produktu</param>
+/// <returns>zwraca obiekt Product</returns>
 Product getProductById(int productId)
 {
     foreach (Product p in contex.Products)
@@ -201,6 +211,9 @@ Product getProductById(int productId)
     return null;
 }
 
+/// <summary>
+/// Metoda wyświetla szczegółowe dnae o wszystkich zamówieniach (Orders)
+/// </summary>
 void ShowOrders()
 {
     foreach (Order order in contex.Orders)
@@ -224,7 +237,9 @@ void ShowOrders()
         Console.WriteLine("--------------");
     }
 }
-
+/// <summary>
+/// Metoda dołącza powiązanie pomiędzy Orders a OrderDetails
+/// </summary>
 void IncludeOrderDetails()
 {
     var cont = contex;
@@ -238,7 +253,7 @@ void IncludeOrderDetails()
 }
 
 IncludeOrderDetails();
-/*
+
 ZipDataBase();
 AddProducts();
 AddProductsFromFile();
@@ -253,7 +268,7 @@ orderId = AddOrder("Golonka po bawarsku", "Polańska", 2, DateTime.Now);
 AddProductToOrder("Kaszanka z ziemniakami", 2, orderId);
 orderId = AddOrder("Kapuśniak", "Czapiewska", 1, DateTime.Now);
 AddProductToOrder("Sandacz po zamordejsku", 1, orderId);
-*/
+
 ShowOrders();
 
 

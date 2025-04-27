@@ -9,7 +9,6 @@ using EnityFrameworkProject.Data;
 using System.Runtime.CompilerServices;
 
 /// <summary>Projekt prostej bazy Produkt-Klient-Zamówienie</summary>
-
 namespace EnityFrameworkProject.Data
 {
     /// <summary>

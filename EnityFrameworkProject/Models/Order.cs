@@ -1,7 +1,7 @@
 ﻿namespace EnityFrameworkProject.Models
 {
     /// <summary>
-    /// Klasa przechowująca zamówienie dla konkretnego klienta sklepu
+    /// Klasa przechowująca zamówienie dla konkretnego klienta restauracji
     /// </summary>
     public class Order
     {

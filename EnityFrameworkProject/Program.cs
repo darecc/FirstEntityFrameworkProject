@@ -4,11 +4,11 @@ using Microsoft.EntityFrameworkCore;
 using System.Diagnostics.CodeAnalysis;
 using System.Reflection.Metadata.Ecma335;
 using System.Runtime.InteropServices;
-
+///<summary>context jest głównym eobiektem w programie</summary>
 MyDBContext contex = new MyDBContext();
 Console.WriteLine("tutorial: https://www.youtube.com/watch?v=SryQxUeChMc&list=PLdo4fOcmZ0oXCPdC3fTFA3Z79-eVH3K-s");
 
-/// <summary>Metoda dodaje "ręcznie" okreśone produkty</summary>
+/// <summary>Metoda dodaje "ręcznie" okreśone produkty (dania restauracyjne)</summary>
 void AddProducts()
 {
     Product simplePizza = new Product()
@@ -38,36 +38,37 @@ void AddProducts()
     contex.SaveChanges();
 }
 
-void ShowProducts()
+void ShowMenu()
 {
     var products = from product in contex.Products
                    where product.Price > 7.00M
                    orderby product.Name
                    select product;
-
+    Console.WriteLine("Menu:");
     foreach (Product product in products)
     {
-        Console.WriteLine(product.Name);
-        Console.WriteLine(product.Price);
-        Console.WriteLine("--------------");
+        Console.WriteLine("\t" + product.Name);
+        Console.WriteLine("\t" + product.Price);
+        Console.WriteLine("\t--------------");
     }
 }
-
+/// <summary>Metoda wyświetla informacje o wszystkich klientach restauracji</summary>
 void ShowCustomers()
 {
     var customers = from customer in contex.Customers
                    orderby customer.LastName
                    select customer;
-
+    Console.WriteLine("Klienci restauracji: ");
     foreach (Customer c in customers)
     {
-        Console.WriteLine(c.FirstName);
-        Console.WriteLine(c.LastName);
-        Console.WriteLine(c.Email);
-        Console.WriteLine("--------------");
+        Console.WriteLine("\t" + c.FirstName);
+        Console.WriteLine("\t" + c.LastName);
+        Console.WriteLine("\t" + c.Email);
+        Console.WriteLine("\t--------------");
     }
 }
 
+/// <summary>Metoda dodaje produkty (dania restauracyjne) do bazy danych</summary>
 void AddProductsFromFile()
 {
     var stream = new FileStream("..\\..\\..\\Dane\\products.dat", FileMode.Open);
@@ -105,7 +106,7 @@ void AddCustomersFromFile()
     stream.Close();
     contex.SaveChanges();
 }
-/// <summary>Opróżnienie tabel bazy danych</summary>
+/// <summary>Metoda realizuke opróżnienie tabel bazy danych</summary>
 void ZipDataBase()
 {
   foreach (Product product in contex.Products)
@@ -125,6 +126,7 @@ void ZipDataBase()
 
 }
 
+/// <summary>Metoda zwraca obiekt Product (danie restauracyjne) na podstawie nazwy produktu (dania)</summary>
 Product getProduct(string productName)
 {
     foreach(Product product in contex.Products)
@@ -135,6 +137,7 @@ Product getProduct(string productName)
     return null;
 }
 
+///<summary>Metoda zwraca numer zamówienia na podstawie nazwy klienta</summary>
 int getCustomerId(string customerName)
 {
     foreach (Customer customer in contex.Customers)
@@ -216,25 +219,26 @@ Product getProductById(int productId)
 /// </summary>
 void ShowOrders()
 {
+    Console.WriteLine("Zamówienia:");
     foreach (Order order in contex.Orders)
     {
-        Console.WriteLine("Numer zamówienia: " + order.Id);
-        Console.WriteLine("Data: " + order.OrderPlaced.ToString());
-        Console.WriteLine("Klient: " + getCustomerName(order.CustomerId));
+        Console.WriteLine("\tNumer zamówienia: " + order.Id);
+        Console.WriteLine("\tData: " + order.OrderPlaced.ToString());
+        Console.WriteLine("\tKlient: " + getCustomerName(order.CustomerId));
         decimal suma = 0;
         foreach (OrderDetail detail in order.OrderDetails)
         {
-            Console.WriteLine("Produkt: " + getProductById(detail.ProductId).Name);
+            Console.WriteLine("\t\tProdukt: " + getProductById(detail.ProductId).Name);
             if (detail.OrderId == order.Id)
             {
-                Console.WriteLine("Ilość: " + detail.Quantity);
+                Console.WriteLine("\t\tIlość: " + detail.Quantity);
             }
             decimal kwota = detail.Product.Price * detail.Quantity;
             suma += kwota;
-            Console.WriteLine("Kwota: " + (kwota).ToString("C2"));
+            Console.WriteLine("\t\tKwota: " + (kwota).ToString("C2"));
         }
-        Console.WriteLine("Razem do zapłaty : " +  suma.ToString("C2"));
-        Console.WriteLine("--------------");
+        Console.WriteLine("\tRazem do zapłaty : " +  suma.ToString("C2"));
+        Console.WriteLine("\t--------------");
     }
 }
 /// <summary>
@@ -258,7 +262,7 @@ ZipDataBase();
 AddProducts();
 AddProductsFromFile();
 AddCustomersFromFile();
-ShowProducts();
+ShowMenu();
 ShowCustomers();
 int orderId = AddOrder("Grochówka", "Ceglarek", 1, DateTime.Now);
 AddProductToOrder("Sandacz po zamordejsku", 1, orderId);

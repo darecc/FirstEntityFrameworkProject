@@ -7,6 +7,9 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace EnityFrameworkProject.Models
 {
+    /// <summary>
+    /// Obiekt Product jest daniem sprzedawanym przez restaurację
+    /// </summary>
     public class Product
     {
         public int Id { get; set; }

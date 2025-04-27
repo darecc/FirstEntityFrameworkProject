@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace EnityFrameworkProject.Models
 {
     /// <summary>
-    /// Klasa Customer reprezentuje klienta sklepu
+    /// Klasa Customer reprezentuje klienta restauracji
     /// </summary>
     public class Customer
     {
@@ -20,19 +20,19 @@ namespace EnityFrameworkProject.Models
         /// </summary>
         public string FirstName { get; set; } = null!;
         /// <summary>
-        /// Nazwisko klienta sklepu
+        /// Nazwisko klienta restauracji
         /// </summary>
         public string LastName { get; set; } = null!;
         /// <summary>
-        /// e-mail klienta sklepu
+        /// e-mail klienta restauracji
         /// </summary>
         public string Email { get; set; } = null!;
         /// <summary>
-        /// Numer telefonu klienta sklepu
+        /// Numer telefonu klienta restauracji
         /// </summary>
         public string Phone { get; set; } = null!;
         /// <summary>
-        /// Lista zamówień dla klienta sklepu
+        /// Lista zamówień dla klienta restauracji
         /// </summary>
         public ICollection<Order> Orders { get; set; } = null!;
 

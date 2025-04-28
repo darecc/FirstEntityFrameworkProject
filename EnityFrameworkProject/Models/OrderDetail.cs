@@ -1,7 +1,7 @@
 ﻿namespace EnityFrameworkProject.Models
 {
     /// <summary>
-    /// Klasa określające szczegóły zamówienia dla konkretnego produktu (Product)
+    /// Klasa określająca szczegóły zamówienia dla konkretnego produktu (Product)
     /// </summary>
     public class OrderDetail
     {

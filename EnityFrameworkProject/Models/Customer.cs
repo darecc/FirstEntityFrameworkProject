@@ -35,6 +35,5 @@ namespace EnityFrameworkProject.Models
         /// Lista zamówień dla klienta restauracji
         /// </summary>
         public ICollection<Order> Orders { get; set; } = null!;
-
     }
 }

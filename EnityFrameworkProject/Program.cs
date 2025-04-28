@@ -61,6 +61,7 @@ void ShowCustomers()
     Console.WriteLine("Klienci restauracji: ");
     foreach (Customer c in customers)
     {
+        Console.WriteLine("\t" + c.Id);
         Console.WriteLine("\t" + c.FirstName);
         Console.WriteLine("\t" + c.LastName);
         Console.WriteLine("\t" + c.Email);
@@ -142,17 +143,21 @@ int getCustomerId(string customerName)
 {
     foreach (Customer customer in contex.Customers)
     {
-        if (customer.LastName == customerName)
+        string name = customer.FirstName + " " + customer.LastName;
+        if (name == customerName)
             return customer.Id;
     }
     return 0;
 }
 
+///<summary>Metoda tworzy zamówienie i dodaje zamówienie je do tabeli zamówień</summary>
 int AddOrder(string productName, string customerName, int quantity, DateTime orderTime)
 {
     Product product = getProduct(productName);
     int customerId = getCustomerId(customerName);
+    Customer customer = getCustomer(customerId);
     Order order = new Order();
+    order.Customer = customer;
     order.CustomerId = customerId;
     order.OrderPlaced = orderTime;
     order.OrderDetails = new List<OrderDetail>();
@@ -168,6 +173,15 @@ int AddOrder(string productName, string customerName, int quantity, DateTime ord
     return order.Id;
 }
 
+///<summary>Metoda zwraca obiekt klienta na podstawie jego Id</summary>
+Customer getCustomer(int customerId)
+{
+    foreach (Customer customer in contex.Customers)
+        if (customer.Id == customerId)
+            return customer;
+    return null;
+}
+///<summary>Metoda dodaje produkt (danie) do zamówienia</summary
 void AddProductToOrder(string productName, int quantity, int orderId)
 {
     OrderDetail detail = new OrderDetail();
@@ -250,10 +264,12 @@ void IncludeOrderDetails()
     var orders = cont.Orders
        .Include(o => o.OrderDetails)
        .ToList();
+    /*
     foreach (var order in orders)
     {
         Console.WriteLine("Details: " + order.OrderDetails.Count);
     }
+    */
 }
 
 IncludeOrderDetails();
@@ -263,15 +279,20 @@ AddProducts();
 AddProductsFromFile();
 AddCustomersFromFile();
 ShowMenu();
+
 ShowCustomers();
-int orderId = AddOrder("Grochówka", "Ceglarek", 1, DateTime.Now);
+
+int orderId = AddOrder("Grochówka", "Dariusz Ceglarek", 1, DateTime.Now);
 AddProductToOrder("Sandacz po zamordejsku", 1, orderId);
 AddProductToOrder("Zupa pomidorowa", 1, orderId);
 AddProductToOrder("Miętus po argentyńsku", 2, orderId);
-orderId = AddOrder("Golonka po bawarsku", "Polańska", 2, DateTime.Now);
+orderId = AddOrder("Golonka po bawarsku", "Katarzyna Polańska", 2, DateTime.Now);
 AddProductToOrder("Kaszanka z ziemniakami", 2, orderId);
-orderId = AddOrder("Kapuśniak", "Czapiewska", 1, DateTime.Now);
+orderId = AddOrder("Kapuśniak", "Ewa Czapiewska", 1, DateTime.Now);
 AddProductToOrder("Sandacz po zamordejsku", 1, orderId);
+orderId = AddOrder("Boczek z pieczarkami", "Jerzy Balicki", 2, DateTime.Now);
+AddProductToOrder("Barszcz", 2, orderId);
+AddProductToOrder("Kaszanka z ziemniakami", 2, orderId);
 
 ShowOrders();
 
